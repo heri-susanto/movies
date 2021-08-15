@@ -42,6 +42,9 @@ async function handler(req, res) {
         collation: {
           locale: "en",
         },
+        sort: {
+          id: 1
+        }
       };
 
       try {

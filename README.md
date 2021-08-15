@@ -1,1 +1,14 @@
 https://vpilip.com/how-build-simple-pagination-in-nextjs/
+
+[REGISTER NEW EMAIL ON PROTON]
+1. REMAKE UI
+2. REMAKE PAGINATION
+3. REMAKE CONTENT [CREATE LOADING]
+4. BUY DOMAINS
+
+
+1. ASIAN 
+2. JAPANESE 
+3. INDONESIAN 
+4. THAI
+5. RANDOM
