@@ -9,7 +9,7 @@ import Pagination from '@material-ui/lab/Pagination';
 export default function Home({ data, page, count_page }) {
   const router = useRouter()
 
-  const displayTweets = data.docs.map((tweet) => {
+  const displayTweets = data?.docs.map((tweet) => {
     return (
       <>
       <div style={{ minHeight: "200px", backgroundColor: "#F5F8FA", width: "40%", margin: "auto", marginTop: "5px", borderRadius: "10px", border: "1px solid #E1E8ED", padding: "10px" }} key={tweet._id}>
