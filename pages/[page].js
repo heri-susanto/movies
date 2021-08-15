@@ -50,16 +50,15 @@ export async function getStaticPaths() {
   let data = await getTweets(options);
   data = JSON.parse(JSON.stringify(data));
 
-  const paths = [
-    { params: { page : '/'} },
-    { params: { page : '/404.html'} }
-  ]
+  const paths = []
 
   for(let i = 0; i < data.totalPages; i += 1) {
       const temp_page = i.toString()
-      paths.push({
+      if(i != 404) {
+        paths.push({
           params: { page: temp_page}
       })
+      }
   }
 
   return {
