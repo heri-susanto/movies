@@ -22,9 +22,9 @@ function runMiddleware(req, res, fn) {
   });
 }
 
-export async function getTweets(options) {
+export async function getTweets(options, query) {
   await dbConnect();
-  const tweets = await Tweet.paginate({}, options);
+  const tweets = await Tweet.paginate(query, options);
   return tweets;
 }
 

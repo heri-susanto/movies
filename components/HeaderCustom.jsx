@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ButtonAppBar() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
@@ -27,10 +29,10 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             The Tweet Collector
           </Typography>
-          <Button color="inherit">All</Button>
-          <Button color="inherit">Indonesian</Button>
-          <Button color="inherit">Japanese</Button>
-          <Button color="inherit">Thai</Button>
+          <Button color="inherit" onClick={() => router.push('/')} >All</Button>
+          <Button color="inherit" onClick={() => router.push('/indonesian/1')} >Indonesian</Button>
+          <Button color="inherit" onClick={() => router.push('/japanese/1')} >Japanese</Button>
+          <Button color="inherit" onClick={() => router.push('/asian/1')} >Asian</Button>
         </Toolbar>
       </AppBar>
     </div>

@@ -16,6 +16,13 @@ const TweetSchema = new Schema({
     type: String,
     required: [true, "Please provide text."],
   },
+  username: {
+    type: String,
+  },
+  category: {
+    type: String,
+    required: [true, "Please provide category."],
+  },
   attachments: {
     media_keys: {
       type: Array,

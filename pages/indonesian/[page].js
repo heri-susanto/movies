@@ -1,12 +1,12 @@
-import { getTweets } from "./api/tweets";
-import { useEffect } from "react"
-import * as ga from '../lib/ga'
-
+import { getTweets } from "../api/tweets";
 import { Tweet } from "react-twitter-widgets";
-import HeaderCustom from "../components/HeaderCustom";
+import HeaderCustom from "../../components/HeaderCustom";
 import { useRouter } from 'next/router';
 import { Box } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
+import { useEffect } from "react"
+import * as ga from '../lib/ga'
+
 
 
 export default function Home({ data, page, count_page }) {
@@ -37,7 +37,7 @@ export default function Home({ data, page, count_page }) {
     );
   });
   const handleChange = ( _, value) => {
-    router.push(`/${value}`)
+    router.push(`/asian/${value}`)
   };
 
   return (
@@ -57,6 +57,9 @@ export default function Home({ data, page, count_page }) {
 }
 
 export async function getStaticPaths() {
+  const query = {
+    category: "indonesian"
+  };
   const options = {
     page: 1,
     limit: 30,
@@ -65,7 +68,7 @@ export async function getStaticPaths() {
     },
   };
 
-  let data = await getTweets(options);
+  let data = await getTweets(options, query);
   data = JSON.parse(JSON.stringify(data));
 
   const paths = []
@@ -86,6 +89,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+  const query = {
+    category: "indonesian"
+  };
   const { page } = context.params;
   const options = {
     page: page ? page : 1,
@@ -95,7 +101,7 @@ export async function getStaticProps(context) {
     },
   };
 
-  let data = await getTweets(options, {});
+  let data = await getTweets(options, query);
   data = JSON.parse(JSON.stringify(data));
   console.log(data.totalPages, "INI TOTAL PAGES")
 
