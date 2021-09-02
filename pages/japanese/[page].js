@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { Box } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
 import { useEffect } from "react"
-import * as ga from '../lib/ga'
+import * as ga from '../../lib/ga'
 
 
 
